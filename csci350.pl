@@ -13,3 +13,6 @@ sum-up-numbers-simple([L | LRest], Result) :-
 	sum-up-numbers-simple(LRest, LRestResult),
 	Result is L + LRestResult.
 
+sum-up-numbers-simple([L | LRest], LRestResult) :-  % element is not a number case
+	\+(number(L)),
+	sum-up-numbers-simple(LRest, LRestResult).
