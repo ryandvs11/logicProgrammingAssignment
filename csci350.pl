@@ -34,3 +34,9 @@ my-flatten([X|Xs],Zs) :-
         my-flatten(X,Y),
         my-flatten(Xs,Ys),
         append(Y,Ys,Zs).
+
+sum-up-numbers-general([],0).
+
+sum-up-numbers-general([L|Ls], Result) :-
+        my-flatten([L|Ls],FlatL),
+        sum-up-numbers-simple(FlatL, Result).
