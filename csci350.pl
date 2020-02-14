@@ -51,3 +51,6 @@ common-uni-flat([H1|T1], L2, [H1|Res]) :-
     
 common-uni-flat([_|T1], L2, Res) :-
     common-uni-flat(T1, L2, Res).
+    
+common-unique-elements([], _, []).
+common-unique-elements(_, [], []).
