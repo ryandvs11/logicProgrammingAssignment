@@ -40,3 +40,11 @@ sum-up-numbers-general([],0).
 sum-up-numbers-general([L|Ls], Result) :-
         my-flatten([L|Ls],FlatL),
         sum-up-numbers-simple(FlatL, Result).
+	
+% Question 4 
+
+common-uni-flat([], _, []).
+
+common-uni-flat([H1|T1], L2, [H1|Res]) :-
+    member(H1, L2),
+    common-uni-flat(T1, L2, Res).
