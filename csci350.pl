@@ -1,3 +1,5 @@
+% Question. 1 - sum-up-numbers-simple
+
 list-chars([], 0).
 list-chars([X|Xs], N):-
     (   number(X)
@@ -16,3 +18,8 @@ sum-up-numbers-simple([L | LRest], Result) :-
 sum-up-numbers-simple([L | LRest], LRestResult) :-  % element is not a number case
 	\+(number(L)),
 	sum-up-numbers-simple(LRest, LRestResult).
+	
+sum-up-numbers-simple([L | LRest], 0) :-  % the list is all non-number elements case
+        length([L | LRest], N),
+	list-chars([L | LRest], M),
+	M == N.
