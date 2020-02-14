@@ -29,3 +29,8 @@ my-flatten([],[]).
 
 my-flatten(X,[X]) :-
         \+(is_list(X)).
+	
+my-flatten([X|Xs],Zs) :-
+        my-flatten(X,Y),
+        my-flatten(Xs,Ys),
+        append(Y,Ys,Zs).
