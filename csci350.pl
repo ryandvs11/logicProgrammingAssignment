@@ -23,3 +23,9 @@ sum-up-numbers-simple([L | LRest], 0) :-  % the list is all non-number elements 
         length([L | LRest], N),
 	list-chars([L | LRest], M),
 	M == N.
+
+% Question 2 
+my-flatten([],[]).
+
+my-flatten(X,[X]) :-
+        \+(is_list(X)).
